@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">o\'clock</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">o\'clock</string>
+    <string name="nav_header_subtitle">splazal97@elpuig.xeill.net</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="userText">Usuario</string>
+    <string name="insertUser">Insertar username</string>
+    <string name="text_pass">Contraseña</string>
+    <string name="insert_pass">Insertar contrasenya</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="register_text">Si no esta registrado pulse aqui</string>
+    <string name="textoiInicio">Con la finalidad de cumplir con la Jefatura del Estado. Real Decreto-ley 8/2019, de 8 de marzo (BOE no 61 de 12-3-2019), sobre medidas urgentes de protección social y de lucha contra la precariedad laboral en la jornada de trabajo.</string>
+
+</resources>
