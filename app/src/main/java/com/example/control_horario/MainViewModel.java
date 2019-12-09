@@ -96,7 +96,5 @@ public class MainViewModel extends AndroidViewModel {
 
     }
 
-    public void verEmpleados(){
 
-    }
 }

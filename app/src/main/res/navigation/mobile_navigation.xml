@@ -30,4 +30,9 @@
         android:name="com.example.control_horario.view.VerHorasFragment"
         android:label="fragment_ver_horas"
         tools:layout="@layout/fragment_ver_horas" />
+    <fragment
+        android:id="@+id/cerrarSesionFragment2"
+        android:name="com.example.control_horario.view.CerrarSesionFragment"
+        android:label="fragment_cerrar_sesion"
+        tools:layout="@layout/fragment_cerrar_sesion" />
 </navigation>
