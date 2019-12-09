@@ -1,4 +1,4 @@
-package com.example.control_horario.View;
+package com.example.control_horario.view;
 
 
 import android.os.Bundle;
@@ -72,7 +72,7 @@ public class IniciarSesionFragment extends Fragment {
             public void onChanged(MainViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
                 switch (estadoDeLaAutenticacion){
                     case AUTENTICADO:
-                        Navigation.findNavController(view).popBackStack();
+                        Navigation.findNavController(view).navigate(R.id.inicioFragment);
                         break;
 
                     case AUTENTICACION_INVALIDA:

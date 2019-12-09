@@ -95,4 +95,8 @@ public class MainViewModel extends AndroidViewModel {
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
 
     }
+
+    public void verEmpleados(){
+
+    }
 }

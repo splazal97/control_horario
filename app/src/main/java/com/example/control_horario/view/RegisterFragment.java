@@ -1,4 +1,4 @@
-package com.example.control_horario.View;
+package com.example.control_horario.view;
 
 
 import android.os.Bundle;

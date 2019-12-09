@@ -6,28 +6,28 @@
     app:startDestination="@id/iniciarSesionFragment">
     <fragment
         android:id="@+id/iniciarSesionFragment"
-        android:name="com.example.control_horario.View.IniciarSesionFragment"
+        android:name="com.example.control_horario.view.IniciarSesionFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_iniciar_sesion" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.control_horario.View.RegisterFragment"
+        android:name="com.example.control_horario.view.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="com.example.control_horario.View.InicioFragment"
+        android:name="com.example.control_horario.view.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" />
     <fragment
         android:id="@+id/ficharFragment"
-        android:name="com.example.control_horario.View.FicharFragment"
+        android:name="com.example.control_horario.view.FicharFragment"
         android:label="fragment_fichar"
         tools:layout="@layout/fragment_fichar" />
 
     <fragment
         android:id="@+id/verHorasFragment"
-        android:name="com.example.control_horario.View.VerHorasFragment"
+        android:name="com.example.control_horario.view.VerHorasFragment"
         android:label="fragment_ver_horas"
         tools:layout="@layout/fragment_ver_horas" />
 </navigation>

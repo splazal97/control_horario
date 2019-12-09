@@ -13,7 +13,9 @@ import com.example.control_horario.model.DetallesEmpleados;
 import com.example.control_horario.model.Empleado;
 import com.example.control_horario.model.Horas;
 
-@Database(entities = {Empleado.class, Horas.class}, views = {DetallesEmpleados.class}, version = 2)
+
+//Cuando se realice un cambio en el esquema de la base de datos hay que cambiar la version
+@Database(entities = {Empleado.class, Horas.class}, views = {DetallesEmpleados.class}, version = 3)
 public abstract class FicharDB extends RoomDatabase {
     private static FicharDB ficharDB;
 
@@ -23,7 +25,7 @@ public abstract class FicharDB extends RoomDatabase {
 
         if(ficharDB == null) {
             synchronized (FicharDB.class) {
-                ficharDB = Room.databaseBuilder(context, FicharDB.class, "FicharFragment.db")
+                ficharDB = Room.databaseBuilder(context, FicharDB.class, "fichar.db")
                         .fallbackToDestructiveMigration()
                         .addCallback(new Callback() {
                             @Override
@@ -44,7 +46,7 @@ public abstract class FicharDB extends RoomDatabase {
             @Override
             public void run() {
                 dao.insertarEmpleado(new Empleado("Admin", "admin", "admin"));
-                dao.insertarEmpleado(new Empleado("sergio","splaza","splaza"));
+                dao.insertarEmpleado(new Empleado("a","a","a"));
             }
         });
     }

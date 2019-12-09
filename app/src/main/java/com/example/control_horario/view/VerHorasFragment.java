@@ -1,4 +1,4 @@
-package com.example.control_horario.View;
+package com.example.control_horario.view;
 
 
 import android.os.Bundle;
@@ -15,10 +15,10 @@ import com.example.control_horario.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InicioFragment extends Fragment {
+public class VerHorasFragment extends Fragment {
 
 
-    public InicioFragment() {
+    public VerHorasFragment() {
         // Required empty public constructor
     }
 
@@ -27,6 +27,7 @@ public class InicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        return inflater.inflate(R.layout.fragment_ver_horas, container, false);
     }
+
 }
