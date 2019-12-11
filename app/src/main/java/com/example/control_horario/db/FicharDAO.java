@@ -30,7 +30,7 @@ public abstract class FicharDAO {
 
 
 // Empleado empleado = new Empleado("Miguel", "Hernandez");
-// INSERT INTO EMPLEADO VALUES(empleado.nombre, empleado.apellido)
+// INSERT INTO EMPLEADO VALUES(empleado.nombreCompleto, empleado.apellido)
 
 
 // Empleado empleado = new Empleado("Miguel", "Hernandez");

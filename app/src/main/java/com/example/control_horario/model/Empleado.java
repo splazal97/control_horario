@@ -10,13 +10,12 @@ public class Empleado {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    public String nombre;
+    public String nombreCompleto;
     public String username;
     public String contrasenya;
-    public String aplelidos;
 
-    public Empleado(String nombre, String username, String contrasenya){
-        this.nombre = nombre;
+    public Empleado(String nombreCompleto, String username, String contrasenya){
+        this.nombreCompleto = nombreCompleto;
         this.username = username;
         this.contrasenya = contrasenya;
     }
@@ -25,10 +24,9 @@ public class Empleado {
     public String toString() {
         return "Empleado{" +
                 "id=" + id +
-                ", nombre='" + nombre + '\'' +
+                ", nombreCompleto='" + nombreCompleto + '\'' +
                 ", username='" + username + '\'' +
                 ", contrasenya='" + contrasenya + '\'' +
-                ", aplelidos='" + aplelidos + '\'' +
                 '}';
     }
 }

@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-//        EditText nombreEditText = findViewById(R.id.nombre);
-//        String nombre = nombreEditText.getText().toString();
+//        EditText nombreEditText = findViewById(R.id.nombreCompleto);
+//        String nombreCompleto = nombreEditText.getText().toString();
 
         //final Empleado empleado = new Empleado("Miguel Hernandez", "mherna", "mherna");
         //final Empleado empleado1 = new Empleado("sergio","splaza","splaza");

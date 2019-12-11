@@ -32,6 +32,7 @@ public class CerrarSesionFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cerrar_sesion, container, false);
 
+
     }
 
 }

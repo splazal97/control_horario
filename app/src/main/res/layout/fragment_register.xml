@@ -3,38 +3,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.RegisterFragment">
+    tools:context=".view.RegisterFragment"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="15sp">
+        <ImageView
+            android:id="@+id/logo"
+            android:src="@drawable/logo_inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="REGISTER"
-            android:textSize="24sp" />
-
+            android:text="Registrarse"
+            android:textSize="25dp"
+            android:padding="15dp"
+            android:layout_margin="12dp"
+            android:gravity="center"/>
         <EditText
-            android:id="@+id/edittext_nombre"
+            android:id="@+id/edittext_nombre_completo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"/>
+            android:hint="Nombre Completo"
+            android:textSize="25dp"
+            android:padding="15sp"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/edittext_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:hint="Username"
+            android:padding="15sp"
+            android:gravity="center"/>
+
         <EditText
             android:id="@+id/edittext_contrasenya"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"/>
-        <EditText
-            android:id="@+id/edittext_biografia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Bio"/>
+            android:textSize="25dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="15sp"
+            android:gravity="center"/>
+
         <Button
             android:id="@+id/button_registrar"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="REGISTRAR"/>
+            android:text="REGISTRAR"
+            android:textSize="20sp"
+            android:background="#7CC7EE"
+            android:padding="15sp"
+            android:layout_margin="15dp"
+            android:gravity="center"/>
     </LinearLayout>
 
 </FrameLayout>

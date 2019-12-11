@@ -9,13 +9,10 @@ import androidx.room.PrimaryKey;
                                     childColumns = "idEmpleado"))
 
 public class Horas {
-    int idEmpleado;
-
     @PrimaryKey(autoGenerate = true)
     int id;
+    int idEmpleado;
     String inicio;
     String fin;
 
-    // 19/10/2011 23:20
-    // 20/10/2011 3:30
 }

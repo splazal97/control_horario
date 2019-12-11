@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,64 +7,64 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:src="@drawable/logo_inicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="15sp">
+            <ImageView
+                android:id="@+id/logo"
+                android:src="@drawable/logo_inicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
 
-    <TextView
-        android:padding="15sp"
-        android:id="@+id/userText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/userText"
-        android:textSize="25sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesion"
+                android:textSize="25sp"
+                android:padding="15dp"
+                android:layout_margin="12dp"
+                android:gravity="center"/>
 
-    <EditText
-        android:padding="15sp"
-        android:id="@+id/insertUser"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="@string/insertUser"
-        android:inputType="textPersonName"
-        android:textSize="25sp" />
-    <TextView
-        android:padding="15sp"
-        android:id="@+id/passText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/text_pass"
-        android:textSize="25sp"/>
+            <EditText
+                android:padding="15sp"
+                android:textSize="25dp"
+                android:id="@+id/insertUser"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/insertUser"
+                android:inputType="textPersonName"
+                />
 
-    <EditText
-        android:padding="15sp"
-        android:id="@+id/insertPass"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="@string/insert_pass"
-        android:inputType="textPassword"
-        android:textSize="25sp"
-        />
-    <TextView
-        android:id="@+id/registerText"
-        android:textSize="24sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/register_text"
-        android:padding="15sp"
-        />
-    <Button
-        android:id="@+id/iniciar_sesionBtn"
-        android:textSize="25sp"
-        android:text="@string/iniciar_sesion"
-        android:background="#7CC7EE"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
+               <EditText
+                android:padding="15sp"
+                android:textSize="25dp"
+                android:id="@+id/insertPass"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/insert_pass"
+                android:inputType="textPassword"
+                />
+            <TextView
+                android:id="@+id/registerText"
+                android:textSize="22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/register_text"
+                android:padding="15sp"
+                />
+            <Button
+                android:id="@+id/iniciar_sesionBtn"
+                android:textSize="20sp"
+                android:text="@string/iniciar_sesion"
+                android:background="#7CC7EE"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+</FrameLayout>

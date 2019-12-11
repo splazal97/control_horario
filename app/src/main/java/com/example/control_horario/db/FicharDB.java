@@ -15,7 +15,7 @@ import com.example.control_horario.model.Horas;
 
 
 //Cuando se realice un cambio en el esquema de la base de datos hay que cambiar la version
-@Database(entities = {Empleado.class, Horas.class}, views = {DetallesEmpleados.class}, version = 3)
+@Database(entities = {Empleado.class, Horas.class}, views = {DetallesEmpleados.class}, version = 4)
 public abstract class FicharDB extends RoomDatabase {
     private static FicharDB ficharDB;
 

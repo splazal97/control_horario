@@ -59,15 +59,15 @@ public class MainViewModel extends AndroidViewModel {
         estadoDelRegistro.postValue(EstadoDelRegistro.INICIO_DEL_REGISTRO);
     }
 
-    public void crearCuentaEIniciarSesion(final String nombre, final String contrasenya, final String biografia) {
+    public void crearCuentaEIniciarSesion(final String username, final String contrasenya, final String nombreCompleto) {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                Empleado usuario = dao.comprobarNombreDisponible(nombre);
+                Empleado usuario = dao.comprobarNombreDisponible(username);
                 if (usuario == null) {
-                    dao.insertarEmpleado(new Empleado(nombre, contrasenya, biografia));
+                    dao.insertarEmpleado(new Empleado(nombreCompleto, username, contrasenya));
                     estadoDelRegistro.postValue(EstadoDelRegistro.REGISTRO_COMPLETADO);
-                    iniciarSesion(nombre, contrasenya);
+                    iniciarSesion(username, contrasenya);
                 } else {
                     estadoDelRegistro.postValue(EstadoDelRegistro.NOMBRE_NO_DISPONIBLE);
                 }

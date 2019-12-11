@@ -29,7 +29,7 @@ public class RegisterFragment extends Fragment {
 
     private MainViewModel mainViewModel;
 
-    private EditText nombreEditText, contrasenyaEditText, biografiaEditText;
+    private EditText usernameEdittext, contrasenyaEditText, nombreCompletoEdidtext;
     private Button registrarButton;
 
 
@@ -51,9 +51,9 @@ public class RegisterFragment extends Fragment {
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
 
-        nombreEditText = view.findViewById(R.id.edittext_nombre);
+        usernameEdittext = view.findViewById(R.id.edittext_username);
         contrasenyaEditText = view.findViewById(R.id.edittext_contrasenya);
-        biografiaEditText = view.findViewById(R.id.edittext_biografia);
+        nombreCompletoEdidtext = view.findViewById(R.id.edittext_nombre_completo);
         registrarButton = view.findViewById(R.id.button_registrar);
 
         // Poner el estado del registro al estado INICIAR,
@@ -63,7 +63,7 @@ public class RegisterFragment extends Fragment {
         registrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainViewModel.crearCuentaEIniciarSesion(nombreEditText.getText().toString(), contrasenyaEditText.getText().toString(), biografiaEditText.getText().toString());
+                mainViewModel.crearCuentaEIniciarSesion(usernameEdittext.getText().toString(), contrasenyaEditText.getText().toString(), nombreCompletoEdidtext.getText().toString());
             }
         });
 
