@@ -3,11 +3,14 @@ package com.example.control_horario.view;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.control_horario.R;
 
@@ -17,6 +20,7 @@ import com.example.control_horario.R;
  */
 public class InicioFragment extends Fragment {
 
+    private TextView userTextView;
 
     public InicioFragment() {
         // Required empty public constructor
@@ -28,5 +32,15 @@ public class InicioFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inicio, container, false);
+
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //Preguntar a gerad como mostar el nombre de usuario aqui
+        userTextView = view.findViewById(R.id.edittext_username_inicio);
     }
 }
