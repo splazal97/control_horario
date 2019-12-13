@@ -34,6 +34,7 @@ public class IniciarSesionFragment extends Fragment {
     private Button iniciarSesionButton;
     private TextView irAlRegistroTextView;
 
+
     public IniciarSesionFragment() { }
 
     @Override

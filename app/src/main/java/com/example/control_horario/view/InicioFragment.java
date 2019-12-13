@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
 
@@ -20,7 +21,9 @@ import com.example.control_horario.R;
  */
 public class InicioFragment extends Fragment {
 
+
     private TextView userTextView;
+    private MainViewModel mainViewModel;
 
     public InicioFragment() {
         // Required empty public constructor
