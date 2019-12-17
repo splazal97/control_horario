@@ -30,7 +30,7 @@ public class MainViewModel extends AndroidViewModel {
 
     FicharDAO dao;
 
-    public Empleado usuarioLogeado;
+    public MutableLiveData<Empleado> usuarioLogeado = new MutableLiveData<>();
 
     public MutableLiveData<EstadoDeLaAutenticacion> estadoDeLaAutenticacion = new MutableLiveData<>(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     public MutableLiveData<EstadoDelRegistro> estadoDelRegistro = new MutableLiveData<>(EstadoDelRegistro.INICIO_DEL_REGISTRO);
@@ -81,7 +81,7 @@ public class MainViewModel extends AndroidViewModel {
             public void run() {
                 Empleado usuario = dao.autenticar(nombre, contrasenya);
                 if (usuario != null) {
-                    usuarioLogeado = usuario;
+                    usuarioLogeado.postValue(usuario);
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
                 } else {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
@@ -91,7 +91,7 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void cerrarSesion() {
-        usuarioLogeado = null;
+        usuarioLogeado.postValue(null);
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
 
     }
