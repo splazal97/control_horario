@@ -25,6 +25,8 @@ public abstract class FicharDAO {
     @Query("SELECT * FROM Empleado WHERE username = :username")
     public abstract Empleado comprobarNombreDisponible(String username);
 
+    //@Query("INSERT INTO Horas(idEmpleado, inicio) VALUES (@idEmpleado, GETDATE())")
+    //public abstract Horas iniciarJornada(int idEmpleado)
 
 }
 

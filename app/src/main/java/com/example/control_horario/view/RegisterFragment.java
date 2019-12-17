@@ -77,6 +77,16 @@ public class RegisterFragment extends Fragment {
                 }
             }
         });
+        mainViewModel.estadoDelRegistro.observe(getViewLifecycleOwner(),new Observer<MainViewModel.EstadoDelRegistro>(){
+            @Override
+            public void onChanged(MainViewModel.EstadoDelRegistro estadoDelRegistro) {
+                switch (estadoDelRegistro){
+                    case DATOS_NO_VALIDOS:
+                        Toast.makeText(getContext(), "HAY DATOS VACIOS", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+                });
 
         mainViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<MainViewModel.EstadoDeLaAutenticacion>() {
             @Override

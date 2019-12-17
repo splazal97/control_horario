@@ -25,7 +25,8 @@ public class MainViewModel extends AndroidViewModel {
     public enum EstadoDelRegistro {
         INICIO_DEL_REGISTRO,
         NOMBRE_NO_DISPONIBLE,
-        REGISTRO_COMPLETADO
+        REGISTRO_COMPLETADO,
+        DATOS_NO_VALIDOS
     }
 
     FicharDAO dao;
@@ -65,9 +66,17 @@ public class MainViewModel extends AndroidViewModel {
             public void run() {
                 Empleado usuario = dao.comprobarNombreDisponible(username);
                 if (usuario == null) {
-                    dao.insertarEmpleado(new Empleado(nombreCompleto, username, contrasenya));
-                    estadoDelRegistro.postValue(EstadoDelRegistro.REGISTRO_COMPLETADO);
-                    iniciarSesion(username, contrasenya);
+                    if (nombreCompleto.isEmpty()){
+                        estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
+                    } else if (username.isEmpty()){
+                        estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
+                    } else if (contrasenya.isEmpty()) {
+                        estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
+                    } else {
+                        dao.insertarEmpleado(new Empleado(nombreCompleto, username, contrasenya));
+                        estadoDelRegistro.postValue(EstadoDelRegistro.REGISTRO_COMPLETADO);
+                        iniciarSesion(username, contrasenya);
+                    }
                 } else {
                     estadoDelRegistro.postValue(EstadoDelRegistro.NOMBRE_NO_DISPONIBLE);
                 }

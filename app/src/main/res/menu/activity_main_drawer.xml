@@ -4,15 +4,18 @@
     tools:showIn="navigation_view">
 
 <item
+    android:icon="@drawable/ic_home_24dp"
     android:id="@+id/inicioFragment"
     android:title="Inicio" />
 
 
     <item
+        android:icon="@drawable/ic_fichar_24dp"
         android:id="@+id/ficharFragment"
         android:title="Fichar"
         />
     <item
+        android:icon="@drawable/ic_ver_horas_24dp"
         android:id="@+id/verHorasFragment"
         android:title="Ver horas" />
 </menu>
