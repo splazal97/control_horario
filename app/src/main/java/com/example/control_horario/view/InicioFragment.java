@@ -53,7 +53,7 @@ public class InicioFragment extends Fragment {
         //Preguntar a gerad como mostar el nombre de usuario aqui
         userTextView = view.findViewById(R.id.edittext_username_inicio);
 
-        mainViewModel.usuarioLogeado.observe(getViewLifecycleOwner(), new Observer<Empleado>() {
+        mainViewModel.empleadoLogueado.observe(getViewLifecycleOwner(), new Observer<Empleado>() {
             @Override
             public void onChanged(Empleado empleado) {
                 if(empleado != null){

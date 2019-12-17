@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         final NavigationView navigationView = findViewById(R.id.nav_view);
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.inicioFragment,R.id.ficharFragment, R.id.verHorasFragment
         )
@@ -55,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
+//Hacemos que sea visible solo en segun que fragments
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller,
@@ -72,23 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-        //Aqui escribo yo juju
-
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-
-//        EditText nombreEditText = findViewById(R.id.nombreCompleto);
-//        String nombreCompleto = nombreEditText.getText().toString();
-
-        //final Empleado empleado = new Empleado("Miguel Hernandez", "mherna", "mherna");
-        //final Empleado empleado1 = new Empleado("sergio","splaza","splaza");
-
-
-        //mainViewModel.insertarEmpleado(empleado);
-        //mainViewModel.insertarEmpleado(empleado1);
-
-
         mainViewModel.obtenerEmpleados().observe(this, new Observer<List<Empleado>>() {
             @Override
             public void onChanged(List<Empleado> empleados) {
@@ -97,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
     }
 

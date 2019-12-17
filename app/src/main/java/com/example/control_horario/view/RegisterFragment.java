@@ -63,6 +63,16 @@ public class RegisterFragment extends Fragment {
         registrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(usernameEdittext.getText().toString().isEmpty()){
+                    usernameEdittext.setError("Introduzca nombre usuario");
+                    return;
+                }
+                if(contrasenyaEditText.getText().toString().isEmpty()){
+                    contrasenyaEditText.setError("Introduzca una contraseña");
+                    return;
+                }
+
                 mainViewModel.crearCuentaEIniciarSesion(usernameEdittext.getText().toString(), contrasenyaEditText.getText().toString(), nombreCompletoEdidtext.getText().toString());
             }
         });

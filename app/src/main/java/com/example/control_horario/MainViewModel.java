@@ -31,11 +31,12 @@ public class MainViewModel extends AndroidViewModel {
 
     FicharDAO dao;
 
-    public MutableLiveData<Empleado> usuarioLogeado = new MutableLiveData<>();
-
+    public MutableLiveData<Empleado> empleadoLogueado = new MutableLiveData<>();
     public MutableLiveData<EstadoDeLaAutenticacion> estadoDeLaAutenticacion = new MutableLiveData<>(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     public MutableLiveData<EstadoDelRegistro> estadoDelRegistro = new MutableLiveData<>(EstadoDelRegistro.INICIO_DEL_REGISTRO);
 
+
+    int idEmpleado = -1;
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -64,8 +65,8 @@ public class MainViewModel extends AndroidViewModel {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                Empleado usuario = dao.comprobarNombreDisponible(username);
-                if (usuario == null) {
+                Empleado empleado = dao.comprobarNombreDisponible(username);
+                if (empleado == null) {
                     if (nombreCompleto.isEmpty()){
                         estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
                     } else if (username.isEmpty()){
@@ -88,9 +89,11 @@ public class MainViewModel extends AndroidViewModel {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                Empleado usuario = dao.autenticar(nombre, contrasenya);
-                if (usuario != null) {
-                    usuarioLogeado.postValue(usuario);
+                Empleado empleado = dao.autenticar(nombre, contrasenya);
+                if (empleado != null) {
+                    idEmpleado = empleado.id;
+
+                    empleadoLogueado.postValue(empleado);
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
                 } else {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
@@ -100,8 +103,11 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void cerrarSesion() {
-        usuarioLogeado.postValue(null);
+        empleadoLogueado.postValue(null);
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
+    }
+
+    public void inicarJornada(final int idEmpleado){
 
     }
 
