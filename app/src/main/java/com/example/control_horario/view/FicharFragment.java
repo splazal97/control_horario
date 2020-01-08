@@ -3,6 +3,8 @@ package com.example.control_horario.view;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -30,4 +32,10 @@ public class FicharFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_fichar, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+    }
 }

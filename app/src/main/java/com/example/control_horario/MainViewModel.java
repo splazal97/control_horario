@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.control_horario.db.FicharDAO;
 import com.example.control_horario.db.FicharDB;
 import com.example.control_horario.model.Empleado;
+import com.example.control_horario.model.Horas;
 
 import java.util.List;
 
@@ -19,7 +20,9 @@ public class MainViewModel extends AndroidViewModel {
     public enum EstadoDeLaAutenticacion {
         NO_AUTENTICADO,
         AUTENTICADO,
-        AUTENTICACION_INVALIDA
+        AUTENTICACION_INVALIDA,
+        ADMIN
+
     }
 
     public enum EstadoDelRegistro {
@@ -67,9 +70,9 @@ public class MainViewModel extends AndroidViewModel {
             public void run() {
                 Empleado empleado = dao.comprobarNombreDisponible(username);
                 if (empleado == null) {
-                    if (nombreCompleto.isEmpty()){
+                    if (nombreCompleto.isEmpty()) {
                         estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
-                    } else if (username.isEmpty()){
+                    } else if (username.isEmpty()) {
                         estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
                     } else if (contrasenya.isEmpty()) {
                         estadoDelRegistro.postValue(EstadoDelRegistro.DATOS_NO_VALIDOS);
@@ -95,6 +98,8 @@ public class MainViewModel extends AndroidViewModel {
 
                     empleadoLogueado.postValue(empleado);
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
+                } else if (){
+                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
                 } else {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
                 }
@@ -106,10 +111,14 @@ public class MainViewModel extends AndroidViewModel {
         empleadoLogueado.postValue(null);
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     }
-
-    public void inicarJornada(final int idEmpleado){
-
+/*
+    public void inicarJornada() {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                dao.iniciarJornada(new Horas(idEmpleado));
+            }
+        });
     }
-
-
+*/
 }

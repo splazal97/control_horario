@@ -46,13 +46,8 @@ public class InicioFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-                mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
-
-
-        //Preguntar a gerad como mostar el nombre de usuario aqui
+        mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
         userTextView = view.findViewById(R.id.edittext_username_inicio);
-
         mainViewModel.empleadoLogueado.observe(getViewLifecycleOwner(), new Observer<Empleado>() {
             @Override
             public void onChanged(Empleado empleado) {
