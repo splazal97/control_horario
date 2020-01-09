@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+<item
+    android:icon="@drawable/ic_home_24dp"
+    android:id="@+id/inicioAdmin"
+    android:title="Inicio" />
+
+
+    <item
+        android:icon="@drawable/ic_fichar_24dp"
+        android:id="@+id/editarUsuarios"
+        android:title="Administar usuarios"
+        />
+    <item
+        android:icon="@drawable/ic_ver_horas_24dp"
+        android:id="@+id/verHorasAdmin"
+        android:title="Ver horas" />
+</menu>

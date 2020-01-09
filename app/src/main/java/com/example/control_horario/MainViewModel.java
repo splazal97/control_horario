@@ -93,13 +93,14 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Empleado empleado = dao.autenticar(nombre, contrasenya);
-                if (empleado != null) {
+                if (empleado.username.equals("admin")) {
+                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
+                }else if(empleado != null) {
                     idEmpleado = empleado.id;
 
                     empleadoLogueado.postValue(empleado);
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
-                } else if (){
-                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
+
                 } else {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
                 }

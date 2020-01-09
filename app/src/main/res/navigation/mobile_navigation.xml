@@ -35,4 +35,19 @@
         android:name="com.example.control_horario.view.CerrarSesionFragment"
         android:label="fragment_cerrar_sesion"
         tools:layout="@layout/fragment_cerrar_sesion" />
+    <fragment
+        android:id="@+id/inicioAdmin"
+        android:name="com.example.control_horario.view.InicioAdminFragment"
+        android:label="fragment_inicio_admin"
+        tools:layout="@layout/fragment_inicio_admin" />
+    <fragment
+        android:id="@+id/editarUsuarios"
+        android:name="com.example.control_horario.view.EditarUsuarios"
+        android:label="fragment_editar_usuarios"
+        tools:layout="@layout/fragment_editar_usuarios" />
+    <fragment
+        android:id="@+id/verHorasAdmin"
+        android:name="com.example.control_horario.view.VerHorasAdmin"
+        android:label="fragment_ver_horas_admin"
+        tools:layout="@layout/fragment_ver_horas_admin" />
 </navigation>

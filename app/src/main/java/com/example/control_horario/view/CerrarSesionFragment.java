@@ -4,6 +4,8 @@ package com.example.control_horario.view;
 import android.content.ClipData;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import com.example.control_horario.R;
  */
 public class CerrarSesionFragment extends Fragment {
 
+    private  MainViewModel mainViewModel;
 
     public CerrarSesionFragment() {
         // Required empty public constructor
@@ -35,4 +38,9 @@ public class CerrarSesionFragment extends Fragment {
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mainViewModel.cerrarSesion();
+    }
 }

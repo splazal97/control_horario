@@ -20,5 +20,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="finalizar_jornada">FINALIZAR JORNADA</string>
     <string name="iniciar_jornada">INICIAR JORNADA</string>
+    <string name="inicio_admin">Inicio de sesion como admin</string>
 
 </resources>

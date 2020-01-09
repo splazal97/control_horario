@@ -1,6 +1,7 @@
 package com.example.control_horario.view;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.control_horario.MainActivity;
+import com.example.control_horario.MainActivityAdmin;
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
@@ -76,6 +79,11 @@ public class IniciarSesionFragment extends Fragment {
                         Navigation.findNavController(view).navigate(R.id.inicioFragment);
                         break;
 
+                    case ADMIN:
+                        Intent MainActivitiAdmin = new Intent(requireActivity(), MainActivityAdmin.class);
+                        startActivity(MainActivitiAdmin);
+
+                        break;
                     case AUTENTICACION_INVALIDA:
                         Toast.makeText(getContext(), "CREDENCIALES NO VALIDAS", Toast.LENGTH_SHORT).show();
                         break;
