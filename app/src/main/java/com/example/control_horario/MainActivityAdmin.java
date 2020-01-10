@@ -39,7 +39,6 @@ public class MainActivityAdmin extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout_admin);
         final NavigationView navigationView = findViewById(R.id.nav_view_admin);
-
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.inicioAdmin,R.id.verHorasAdmin, R.id.editarUsuarios
         )
