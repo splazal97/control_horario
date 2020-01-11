@@ -2,11 +2,13 @@ package com.example.control_horario;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 import com.example.control_horario.db.FicharDAO;
 import com.example.control_horario.db.FicharDB;
@@ -57,6 +59,9 @@ public class MainViewModel extends AndroidViewModel {
 
     LiveData<List<Empleado>> obtenerEmpleados() {
         return dao.getEmpleados();
+    }
+    LiveData<List<Horas>> obtenerHoras(){
+        return dao.getHoras();
     }
 
 
@@ -112,14 +117,9 @@ public class MainViewModel extends AndroidViewModel {
         empleadoLogueado.postValue(null);
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     }
-/*
+
     public void inicarJornada() {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                dao.iniciarJornada(new Horas(idEmpleado));
-            }
-        });
+        dao.iniciarJornada(new Horas(idEmpleado));
     }
-*/
+
 }

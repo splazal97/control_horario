@@ -18,6 +18,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.control_horario.model.Horas;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -76,6 +77,14 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Empleado> empleados) {
                 for(Empleado empleado1: empleados){
                     Log.e("EMP ", empleado1.toString());
+                }
+            }
+        });
+        mainViewModel.obtenerHoras().observe(this, new Observer<List<Horas>>() {
+            @Override
+            public void onChanged(List<Horas> horas) {
+                for (Horas horas1: horas){
+                    Log.e("HOR",horas1.toString());
                 }
             }
         });

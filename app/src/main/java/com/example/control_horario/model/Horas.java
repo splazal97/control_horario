@@ -15,4 +15,19 @@ public class Horas {
     String inicio;
     String fin;
 
+    public Horas(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+    @Override
+    public String toString() {
+        return "Horas{" +
+                "id=" + id +
+                ", idEmpleado=" + idEmpleado +
+                ", inicio='" + inicio + '\'' +
+                ", fin='" + fin + '\'' +
+                '}';
+    }
 }
+
+

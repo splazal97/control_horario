@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
 
@@ -18,8 +20,8 @@ import com.example.control_horario.R;
  * A simple {@link Fragment} subclass.
  */
 public class FicharFragment extends Fragment {
-
-
+    MainViewModel mainViewModel;
+    Button iniciarJornada;
     public FicharFragment() {
         // Required empty public constructor
     }
@@ -35,6 +37,13 @@ public class FicharFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        iniciarJornada = view.findViewById(R.id.iniciarJornadaBTN);
+        iniciarJornada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainViewModel.inicarJornada();
+            }
+        });
 
 
     }

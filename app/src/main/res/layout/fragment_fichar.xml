@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/Iniciar_jornada_button"
+        android:id="@+id/iniciarJornadaBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#7CC7EE"
@@ -18,7 +18,7 @@
         android:padding="15dp"
         android:layout_margin="15dp"/>
     <Button
-        android:id="@+id/Finalizar_jornada_button"
+        android:id="@+id/finalizarJornadaBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#7CC7EE"
