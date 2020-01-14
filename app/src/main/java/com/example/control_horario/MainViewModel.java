@@ -98,8 +98,9 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Empleado empleado = dao.autenticar(nombre, contrasenya);
-                if (empleado.username.equals("admin")) {
+                 if (empleado.username.equals("admin")) {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
+
                 }else if(empleado != null) {
                     idEmpleado = empleado.id;
 
@@ -119,7 +120,9 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void inicarJornada() {
-        dao.iniciarJornada(new Horas(idEmpleado));
+
+
+        // dao.iniciarJornada(new Horas(idEmpleado));
     }
 
 }

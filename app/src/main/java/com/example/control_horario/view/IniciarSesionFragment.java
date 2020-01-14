@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.control_horario.MainActivityAdmin;
-import com.example.control_horario.MainActivityAdminGG;
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 

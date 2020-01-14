@@ -3,6 +3,7 @@ package com.example.control_horario;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.control_horario.db.FicharDAO;
 import com.example.control_horario.model.Empleado;
 
 import android.util.Log;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
         mainViewModel.obtenerEmpleados().observe(this, new Observer<List<Empleado>>() {
             @Override

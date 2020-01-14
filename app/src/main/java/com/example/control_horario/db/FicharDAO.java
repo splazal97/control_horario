@@ -28,10 +28,12 @@ public abstract class FicharDAO {
 
     @Query("SELECT * FROM Empleado WHERE username = :username")
     public abstract Empleado comprobarNombreDisponible(String username);
-
+/*
     @Query("INSERT INTO Horas(idEmpleado, inicio) VALUES (:idEmpleado, date('now'))")
     public abstract Horas iniciarJornada(Horas idEmpleado);
-/*
+
+*/
+ /*
     @Query("INSERT INTO Horas (idEmpleado, fin) VALUES (:idEmpleado, date('now'))")
     public abstract Horas finalJornada(int idEmpleado);
 

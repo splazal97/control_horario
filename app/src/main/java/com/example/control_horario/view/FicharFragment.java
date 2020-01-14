@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,13 +39,13 @@ public class FicharFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         iniciarJornada = view.findViewById(R.id.iniciarJornadaBTN);
-        iniciarJornada.setOnClickListener(new View.OnClickListener() {
+     /*   iniciarJornada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainViewModel.inicarJornada();
             }
         });
-
+*/
 
     }
 }
