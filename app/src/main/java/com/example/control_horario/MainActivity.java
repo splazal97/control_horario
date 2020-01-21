@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         final NavigationView navigationView = findViewById(R.id.nav_view);
 
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.inicioFragment,R.id.ficharFragment, R.id.verHorasFragment
         )

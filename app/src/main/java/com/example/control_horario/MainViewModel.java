@@ -15,6 +15,7 @@ import com.example.control_horario.db.FicharDB;
 import com.example.control_horario.model.Empleado;
 import com.example.control_horario.model.Horas;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class MainViewModel extends AndroidViewModel {
@@ -46,6 +47,7 @@ public class MainViewModel extends AndroidViewModel {
     public MainViewModel(@NonNull Application application) {
         super(application);
         dao = FicharDB.getInstance(application).dao();
+
     }
 
     void insertarEmpleado(final Empleado empleado) {
@@ -120,9 +122,12 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void inicarJornada() {
-
-
-        // dao.iniciarJornada(new Horas(idEmpleado));
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                dao.iniciarJornada(idEmpleado, LocalDateTime.now());
+            }
+        });
     }
 
 }

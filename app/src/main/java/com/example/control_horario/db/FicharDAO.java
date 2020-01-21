@@ -6,9 +6,9 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.control_horario.model.Empleado;
-import com.example.control_horario.model.Empleado;
 import com.example.control_horario.model.Horas;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Dao
@@ -28,11 +28,10 @@ public abstract class FicharDAO {
 
     @Query("SELECT * FROM Empleado WHERE username = :username")
     public abstract Empleado comprobarNombreDisponible(String username);
-/*
-    @Query("INSERT INTO Horas(idEmpleado, inicio) VALUES (:idEmpleado, date('now'))")
-    public abstract Horas iniciarJornada(Horas idEmpleado);
 
-*/
+    @Query("INSERT INTO Horas(idEmpleado, inicio) VALUES (:idEmpleado, :fecha)")
+    public abstract long iniciarJornada(int idEmpleado, LocalDateTime fecha);
+
  /*
     @Query("INSERT INTO Horas (idEmpleado, fin) VALUES (:idEmpleado, date('now'))")
     public abstract Horas finalJornada(int idEmpleado);
