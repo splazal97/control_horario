@@ -2,6 +2,7 @@ package com.example.control_horario.model;
 
 import androidx.room.TypeConverter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Converters {
@@ -18,4 +19,5 @@ public class Converters {
         if (date == null) return null;
         return date.toString();
     }
+
 }

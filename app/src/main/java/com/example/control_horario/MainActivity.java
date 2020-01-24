@@ -7,6 +7,7 @@ import com.example.control_horario.db.FicharDAO;
 import com.example.control_horario.model.Empleado;
 
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -33,7 +34,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     MainViewModel mainViewModel;
-
+    NavController navController;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -45,14 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         final NavigationView navigationView = findViewById(R.id.nav_view);
-
-
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.inicioFragment,R.id.ficharFragment, R.id.verHorasFragment
         )
                 .setDrawerLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -106,5 +106,18 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                navController.navigate(R.id.CerrarSesionFragment);
+                return false;
+            }
+        });
+        return super.onOptionsItemSelected(item);
+
     }
 }

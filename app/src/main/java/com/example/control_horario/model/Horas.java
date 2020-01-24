@@ -7,6 +7,7 @@ import androidx.room.TypeConverter;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity(foreignKeys = @ForeignKey(entity = Empleado.class,
@@ -22,6 +23,8 @@ public class Horas {
     public LocalDateTime inicio;
     public LocalDateTime fin;
 
+
+
     public Horas(int idEmpleado, LocalDateTime inicio) {
         this.idEmpleado = idEmpleado;
         this.inicio = inicio;
@@ -36,6 +39,7 @@ public class Horas {
                 ", fin=" + fin +
                 '}';
     }
+
 }
 
 

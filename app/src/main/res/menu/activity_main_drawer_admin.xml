@@ -17,5 +17,5 @@
     <item
         android:icon="@drawable/ic_ver_horas_24dp"
         android:id="@+id/verHorasAdmin"
-        android:title="Ver horas" />
+        android:title="Ver horas admin" />
 </menu>

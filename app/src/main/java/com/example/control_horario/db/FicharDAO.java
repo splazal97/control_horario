@@ -8,6 +8,7 @@ import androidx.room.Query;
 import com.example.control_horario.model.Empleado;
 import com.example.control_horario.model.Horas;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -29,14 +30,16 @@ public abstract class FicharDAO {
     @Query("SELECT * FROM Empleado WHERE username = :username")
     public abstract Empleado comprobarNombreDisponible(String username);
 
-    @Query("INSERT INTO Horas(idEmpleado, inicio) VALUES (:idEmpleado, :fecha)")
-    public abstract long iniciarJornada(int idEmpleado, LocalDateTime fecha);
+    @Query("INSERT INTO Horas(idEmpleado, inicio) VALUES (:idEmpleado, :inicio)")
+    public abstract long iniciarJornada(int idEmpleado, LocalDateTime inicio);
 
- /*
-    @Query("INSERT INTO Horas (idEmpleado, fin) VALUES (:idEmpleado, date('now'))")
-    public abstract Horas finalJornada(int idEmpleado);
 
- */
+    @Query("INSERT INTO Horas(idEmpleado, fin) VALUES (:idEmpleado, :fin)")
+    public abstract long finalJornada(int idEmpleado, LocalDateTime fin);
+
+
+    @Query("SELECT * FROM Horas WHERE idEmpleado = :idEmpleado")
+    public  abstract LiveData<List<Horas>> verHoras(int idEmpleado);
 
 }
 

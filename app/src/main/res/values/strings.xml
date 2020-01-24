@@ -22,5 +22,6 @@
     <string name="iniciar_jornada">INICIAR JORNADA</string>
     <string name="inicio_admin">Inicio de sesion como admin</string>
     <string name="title_activity_main_admin">MainActivityAdmin</string>
+    <string name="horas_insertadas">Horas insertadas:</string>
 
 </resources>

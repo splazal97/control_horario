@@ -23,14 +23,15 @@ import android.view.View;
 
 public class MainActivityAdmin extends AppCompatActivity {
         MainViewModel mainViewModel;
+    NavController navController;
 
-        private AppBarConfiguration mAppBarConfiguration;
+    private AppBarConfiguration mAppBarConfiguration;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_admin);
-            final Toolbar toolbar = findViewById(R.id.toolbar);
+            final Toolbar toolbar = findViewById(R.id.toolbar_admin);
             setSupportActionBar(toolbar);
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout_admin);
@@ -40,7 +41,8 @@ public class MainActivityAdmin extends AppCompatActivity {
             )
                     .setDrawerLayout(drawer)
                     .build();
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+            navController = Navigation.findNavController(this, R.id.nav_host_fragment_admin);
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -74,7 +76,7 @@ public class MainActivityAdmin extends AppCompatActivity {
 
         @Override
         public boolean onSupportNavigateUp() {
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_admin);
             return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                     || super.onSupportNavigateUp();
         }

@@ -24,7 +24,7 @@ import com.example.control_horario.R;
  */
 public class FicharFragment extends Fragment  {
     MainViewModel mainViewModel;
-    Button iniciarJornada;
+    Button iniciarJornada,finalJornada;
     public FicharFragment() {
         // Required empty public constructor
     }
@@ -44,6 +44,7 @@ public class FicharFragment extends Fragment  {
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
 
         iniciarJornada = view.findViewById(R.id.iniciarJornadaBTN);
+        finalJornada = view.findViewById(R.id.finalizarJornadaBTN);
         iniciarJornada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,8 +55,9 @@ public class FicharFragment extends Fragment  {
                     @Override
                     public void run() {
                         if (i == 1) {
-                            Toast.makeText(getContext(),"Para realizar jornada debes realizar un doble click",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(),"Para iniciar jornada debes realizar un doble click",Toast.LENGTH_SHORT).show();
                         } else  if (i ==2){
+                            Toast.makeText(getContext(),"Horas añadidas correctamente",Toast.LENGTH_SHORT).show();
                             mainViewModel.inicarJornada();
                         }
                         i= 0;
@@ -64,7 +66,25 @@ public class FicharFragment extends Fragment  {
 
             }
         });
-
+        finalJornada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i++;
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (i == 1) {
+                            Toast.makeText(getContext(),"Para finaliar jornada debes realizar un doble click",Toast.LENGTH_SHORT).show();
+                        }else if (i ==2){
+                            Toast.makeText(getContext(),"Horas añadidas correctamente",Toast.LENGTH_SHORT).show();
+                            mainViewModel.finalJornada();
+                        }
+                        i=0;
+                    }
+                },500);
+            }
+        });
 
         }
 

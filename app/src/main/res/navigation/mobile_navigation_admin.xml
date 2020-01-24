@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_admin"
+    app:startDestination="@id/inicioAdmin">
+
+    <fragment
+        android:id="@+id/inicioAdmin"
+        android:name="com.example.control_horario.view.InicioAdminFragment"
+        android:label="fragment_inicio_admin"
+        tools:layout="@layout/fragment_inicio_admin" />
+    <fragment
+        android:id="@+id/editarUsuarios"
+        android:name="com.example.control_horario.view.EditarUsuarios"
+        android:label="fragment_editar_usuarios"
+        tools:layout="@layout/fragment_editar_usuarios" />
+    <fragment
+        android:id="@+id/verHorasAdmin"
+        android:name="com.example.control_horario.view.VerHorasAdmin"
+        android:label="fragment_ver_horas_admin"
+        tools:layout="@layout/fragment_ver_horas_admin" />
+
+</navigation>

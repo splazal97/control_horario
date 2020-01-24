@@ -9,12 +9,14 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
+import androidx.navigation.Navigation;
 
 import com.example.control_horario.db.FicharDAO;
 import com.example.control_horario.db.FicharDB;
 import com.example.control_horario.model.Empleado;
 import com.example.control_horario.model.Horas;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -49,7 +51,6 @@ public class MainViewModel extends AndroidViewModel {
         dao = FicharDB.getInstance(application).dao();
 
     }
-
     void insertarEmpleado(final Empleado empleado) {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -64,6 +65,10 @@ public class MainViewModel extends AndroidViewModel {
     }
     LiveData<List<Horas>> obtenerHoras(){
         return dao.getHoras();
+    }
+
+    public LiveData<List<Horas>> verHoras(){
+        return dao.verHoras(idEmpleado);
     }
 
 
@@ -119,6 +124,7 @@ public class MainViewModel extends AndroidViewModel {
     public void cerrarSesion() {
         empleadoLogueado.postValue(null);
         estadoDeLaAutenticacion.setValue(EstadoDeLaAutenticacion.NO_AUTENTICADO);
+
     }
 
     public void inicarJornada() {
@@ -129,5 +135,16 @@ public class MainViewModel extends AndroidViewModel {
             }
         });
     }
+
+    public  void finalJornada(){
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                dao.finalJornada(idEmpleado, LocalDateTime.now());
+            }
+        });
+    }
+
+
 
 }
