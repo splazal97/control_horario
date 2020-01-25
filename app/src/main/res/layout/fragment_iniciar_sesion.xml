@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.IniciarSesionFragment"
     android:gravity="center"
     android:orientation="vertical"
@@ -60,12 +61,19 @@
                 android:text="@string/register_text"
                 android:padding="15sp"
                 />
-            <Button
+            <com.sanojpunchihewa.glowbutton.GlowButton
                 android:id="@+id/iniciar_sesionBtn"
                 android:textSize="20sp"
                 android:text="@string/iniciar_sesion"
-                android:background="#7CC7EE"
+                android:padding="20dp"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:buttonColor="#7CC7EE"
+                app:glowColor="#7CC7EE"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
         </LinearLayout>
 </FrameLayout>

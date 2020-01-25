@@ -34,6 +34,9 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.2.2'
     annotationProcessor 'androidx.room:room-compiler:2.2.2'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'com.github.SanojPunchihewa:GlowButton:1.0.0'
+
 
 
 }

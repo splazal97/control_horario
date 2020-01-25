@@ -23,6 +23,8 @@ import com.example.control_horario.MainActivityAdmin;
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
+import es.dmoral.toasty.Toasty;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -84,7 +86,7 @@ public class IniciarSesionFragment extends Fragment {
 
                         break;
                     case AUTENTICACION_INVALIDA:
-                        Toast.makeText(getContext(), "CREDENCIALES NO VALIDAS", Toast.LENGTH_SHORT).show();
+                        Toasty.error(getContext(), "CREDENCIALES NO VALIDAS", Toast.LENGTH_SHORT,true).show();
                         break;
                 }
             }

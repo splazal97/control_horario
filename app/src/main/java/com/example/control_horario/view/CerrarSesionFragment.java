@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -21,9 +22,7 @@ import com.example.control_horario.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CerrarSesionFragment extends Fragment {
-
-    private  MainViewModel mainViewModel;
+public class CerrarSesionFragment extends MyFragment {
 
     public CerrarSesionFragment() {
         // Required empty public constructor
@@ -41,9 +40,17 @@ public class CerrarSesionFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         mainViewModel.cerrarSesion();
-        Navigation.findNavController(view).navigate(R.id.iniciarSesionFragment);
+
+        mainViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<MainViewModel.EstadoDeLaAutenticacion>() {
+            @Override
+            public void onChanged(MainViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
+
+                Navigation.findNavController(view).navigate(R.id.iniciarSesionFragment);
+            }
+        });
     }
 }

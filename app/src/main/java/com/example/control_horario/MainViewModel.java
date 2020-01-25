@@ -3,6 +3,7 @@ package com.example.control_horario;
 import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -19,6 +20,8 @@ import com.example.control_horario.model.Horas;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -105,19 +108,20 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Empleado empleado = dao.autenticar(nombre, contrasenya);
-                 if (empleado.username.equals("admin")) {
-                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
+                    if (empleado.username.equals("admin")) {
+                        estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
 
-                }else if(empleado != null) {
-                    idEmpleado = empleado.id;
+                    } else if (empleado != null) {
+                        idEmpleado = empleado.id;
 
-                    empleadoLogueado.postValue(empleado);
-                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
+                        empleadoLogueado.postValue(empleado);
+                        estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
 
-                } else {
-                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
+                    } else {
+                        estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
+                    }
                 }
-            }
+
         });
     }
 

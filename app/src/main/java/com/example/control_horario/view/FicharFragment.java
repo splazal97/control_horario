@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
+import es.dmoral.toasty.Toasty;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,6 +45,8 @@ public class FicharFragment extends Fragment  {
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
 
+
+
         iniciarJornada = view.findViewById(R.id.iniciarJornadaBTN);
         finalJornada = view.findViewById(R.id.finalizarJornadaBTN);
         iniciarJornada.setOnClickListener(new View.OnClickListener() {
@@ -55,9 +59,9 @@ public class FicharFragment extends Fragment  {
                     @Override
                     public void run() {
                         if (i == 1) {
-                            Toast.makeText(getContext(),"Para iniciar jornada debes realizar un doble click",Toast.LENGTH_SHORT).show();
+                            Toasty.error(getContext(),"Para iniciar jornada debes realizar un doble click",Toast.LENGTH_SHORT, true).show();
                         } else  if (i ==2){
-                            Toast.makeText(getContext(),"Horas añadidas correctamente",Toast.LENGTH_SHORT).show();
+                            Toasty.success(getContext(),"Horas añadidas correctamente",Toast.LENGTH_SHORT, true).show();
                             mainViewModel.inicarJornada();
                         }
                         i= 0;

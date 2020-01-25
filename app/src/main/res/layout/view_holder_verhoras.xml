@@ -9,17 +9,13 @@
         android:id="@+id/textViewHorasInsertadas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="4.5"
+        android:layout_weight="6.5"
         android:text="@string/horas_insertadas"/>
     <TextView
-        android:id="@+id/InicioJornadaText"
+        android:id="@+id/JornadaText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="10" />
-    <TextView
-        android:id="@+id/FinJornadaText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="10" />
+
 
 </LinearLayout>

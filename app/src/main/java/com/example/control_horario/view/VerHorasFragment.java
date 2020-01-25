@@ -7,12 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Query;
-import androidx.room.TypeConverter;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,7 +19,6 @@ import android.widget.TextView;
 
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
-import com.example.control_horario.model.Converters;
 import com.example.control_horario.model.Horas;
 
 import java.time.format.DateTimeFormatter;
@@ -89,15 +85,13 @@ public class VerHorasFragment extends Fragment {
             final Horas horas = verHorasDetalle.get(position);
 
             if (horas.inicio != null){
-                holder.iniciarJornada.setText(horas.inicio.format(formatter));
-            } else {
-                holder.iniciarJornada.setText("Hora de inicio");
+                holder.textViewHorasInsetadas.setText("Inicio de Jornada: ");
+                holder.jornadaText.setText(horas.inicio.format(formatter));
             }
 
              if (horas.fin != null) {
-                 holder.finalJornada.setText(horas.fin.format(formatter));
-             } else {
-                 holder.finalJornada.setText("Hora de fin");
+                 holder.textViewHorasInsetadas.setText("Fin de Jornada");
+                 holder.jornadaText.setText(horas.fin.format(formatter));
              }
 
         }
@@ -114,12 +108,12 @@ public class VerHorasFragment extends Fragment {
         }
 
         class VerHorasViewHolder extends  RecyclerView.ViewHolder{
-            TextView iniciarJornada, finalJornada;
+            TextView jornadaText, textViewHorasInsetadas;
 
             public VerHorasViewHolder(@NonNull View itemView) {
                 super(itemView);
-                iniciarJornada= itemView.findViewById(R.id.InicioJornadaText);
-                finalJornada = itemView.findViewById(R.id.FinJornadaText);
+                textViewHorasInsetadas = itemView.findViewById(R.id.textViewHorasInsertadas);
+                jornadaText = itemView.findViewById(R.id.JornadaText);
             }
         }
     }
