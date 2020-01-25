@@ -20,6 +20,8 @@ import android.widget.Toast;
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
+import es.dmoral.toasty.Toasty;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,6 +68,7 @@ public class RegisterFragment extends Fragment {
 
                 if(usernameEdittext.getText().toString().isEmpty()){
                     usernameEdittext.setError("Introduzca nombre usuario");
+
                     return;
                 }
                 if(contrasenyaEditText.getText().toString().isEmpty()){
@@ -82,7 +85,7 @@ public class RegisterFragment extends Fragment {
             public void onChanged(MainViewModel.EstadoDelRegistro estadoDelRegistro) {
                 switch (estadoDelRegistro){
                     case NOMBRE_NO_DISPONIBLE:
-                        Toast.makeText(getContext(), "NOMBRE DE USUARIO NO DISPONIBLE", Toast.LENGTH_SHORT).show();
+                        Toasty.warning(getContext(), "NOMBRE DE USUARIO NO DISPONIBLE", Toast.LENGTH_SHORT,true).show();
                         break;
                 }
             }
@@ -92,7 +95,7 @@ public class RegisterFragment extends Fragment {
             public void onChanged(MainViewModel.EstadoDelRegistro estadoDelRegistro) {
                 switch (estadoDelRegistro){
                     case DATOS_NO_VALIDOS:
-                        Toast.makeText(getContext(), "HAY DATOS VACIOS", Toast.LENGTH_SHORT).show();
+                        Toasty.warning(getContext(),"HAY DATOS VACIOS",Toast.LENGTH_SHORT,true).show();
                         break;
                 }
             }

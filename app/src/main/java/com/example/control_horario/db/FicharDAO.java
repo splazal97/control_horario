@@ -24,6 +24,7 @@ public abstract class FicharDAO {
     @Query("SELECT * FROM Horas")
     public  abstract  LiveData<List<Horas>> getHoras();
 
+
     @Query("SELECT * FROM Empleado WHERE username = :username AND contrasenya = :contrasenya")
     public abstract Empleado autenticar(String username, String contrasenya);
 

@@ -19,6 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivityAdmin extends AppCompatActivity {
@@ -80,5 +81,18 @@ public class MainActivityAdmin extends AppCompatActivity {
             return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                     || super.onSupportNavigateUp();
         }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                navController.navigate(R.id.cerrarSessionAdminFragment);
+                return false;
+            }
+        });
+        return super.onOptionsItemSelected(item);
+
+    }
     }
 

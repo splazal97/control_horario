@@ -68,7 +68,17 @@ public class IniciarSesionFragment extends Fragment {
         iniciarSesionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                mainViewModel.iniciarSesion(usuarioEditText.getText().toString(), contrasenyaEditText.getText().toString());
+                if (usuarioEditText.getText().toString().isEmpty()) {
+                    contrasenyaEditText.setError("Insertar usuario");
+                    Toasty.error(getContext(),"Inserte el nombre de usuario",Toast.LENGTH_SHORT,true).show();
+                } else if (contrasenyaEditText.getText().toString().isEmpty()){
+                    contrasenyaEditText.setError("Insertar contraseña");
+                    Toasty.error(getContext(),"Inserte la contraseña",Toast.LENGTH_SHORT,true).show();
+
+                } else {
+                    mainViewModel.iniciarSesion(usuarioEditText.getText().toString(), contrasenyaEditText.getText().toString());
+                }
+
             }
         });
 

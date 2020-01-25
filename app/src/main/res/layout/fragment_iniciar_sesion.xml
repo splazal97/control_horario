@@ -69,11 +69,8 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 app:buttonColor="#7CC7EE"
-                app:glowColor="#7CC7EE"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:glowColor="#ffffff"
+               />
 
         </LinearLayout>
 </FrameLayout>

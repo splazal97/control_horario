@@ -20,5 +20,10 @@
         android:name="com.example.control_horario.view.admin.VerHorasAdmin"
         android:label="fragment_ver_horas_admin"
         tools:layout="@layout/fragment_ver_horas_admin" />
+    <fragment
+        android:id="@+id/cerrarSessionAdminFragment"
+        android:name="com.example.control_horario.view.admin.CerrarSessionAdminFragment"
+        android:label="fragment_cerrar_session_admin"
+        tools:layout="@layout/fragment_cerrar_session_admin" />
 
 </navigation>

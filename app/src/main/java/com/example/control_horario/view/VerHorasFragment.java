@@ -31,7 +31,7 @@ import java.util.List;
 public class VerHorasFragment extends Fragment {
 
     MainViewModel mainViewModel;
-    private VerHorasAdapter verHorasAdapter;
+    private VerHorasFragment.verHorasAdapter verHorasAdapter;
 
     public VerHorasFragment() {
         // Required empty public constructor
@@ -51,9 +51,9 @@ public class VerHorasFragment extends Fragment {
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_listaTareas);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_ver_horas);
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(),DividerItemDecoration.VERTICAL));
-        verHorasAdapter = new VerHorasAdapter();
+        verHorasAdapter = new verHorasAdapter();
         recyclerView.setAdapter(verHorasAdapter);
 
         mainViewModel.verHoras().observe(this, new Observer<List<Horas>>() {
@@ -70,7 +70,7 @@ public class VerHorasFragment extends Fragment {
     static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
 
-    class VerHorasAdapter extends RecyclerView.Adapter<VerHorasAdapter.VerHorasViewHolder>{
+    class verHorasAdapter extends RecyclerView.Adapter<VerHorasFragment.verHorasAdapter.VerHorasViewHolder>{
 
         List<Horas> verHorasDetalle;
 
@@ -81,7 +81,7 @@ public class VerHorasFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull VerHorasAdapter.VerHorasViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull VerHorasFragment.verHorasAdapter.VerHorasViewHolder holder, int position) {
             final Horas horas = verHorasDetalle.get(position);
 
             if (horas.inicio != null){

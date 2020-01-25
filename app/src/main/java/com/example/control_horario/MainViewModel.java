@@ -73,6 +73,9 @@ public class MainViewModel extends AndroidViewModel {
     public LiveData<List<Horas>> verHoras(){
         return dao.verHoras(idEmpleado);
     }
+    public  LiveData<List<Empleado>> verEmpleados(){
+        return dao.getEmpleados();
+    }
 
 
     public void iniciarRegistro() {

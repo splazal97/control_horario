@@ -28,6 +28,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
 import android.view.Menu;
 
 import java.util.List;
@@ -75,22 +76,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        mainViewModel.obtenerEmpleados().observe(this, new Observer<List<Empleado>>() {
-            @Override
-            public void onChanged(List<Empleado> empleados) {
-                for(Empleado empleado1: empleados){
-                    Log.e("EMP ", empleado1.toString());
-                }
-            }
-        });
-        mainViewModel.obtenerHoras().observe(this, new Observer<List<Horas>>() {
-            @Override
-            public void onChanged(List<Horas> horas) {
-                for (Horas horas1: horas){
-                    Log.e("HOR",horas1.toString());
-                }
-            }
-        });
 
     }
 
@@ -111,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 navController.navigate(R.id.CerrarSesionFragment);

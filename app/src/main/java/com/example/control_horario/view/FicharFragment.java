@@ -79,9 +79,9 @@ public class FicharFragment extends Fragment  {
                     @Override
                     public void run() {
                         if (i == 1) {
-                            Toast.makeText(getContext(),"Para finaliar jornada debes realizar un doble click",Toast.LENGTH_SHORT).show();
+                            Toasty.error(getContext(),"Para finalizar jornada debes realizar un doble click",Toast.LENGTH_SHORT, true).show();
                         }else if (i ==2){
-                            Toast.makeText(getContext(),"Horas añadidas correctamente",Toast.LENGTH_SHORT).show();
+                            Toasty.success(getContext(),"Horas añadidas correctamente",Toast.LENGTH_SHORT, true).show();
                             mainViewModel.finalJornada();
                         }
                         i=0;
