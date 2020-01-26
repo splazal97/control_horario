@@ -36,6 +36,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.github.GrenderG:Toasty:1.4.2'
     implementation 'com.github.SanojPunchihewa:GlowButton:1.0.0'
+    implementation 'com.github.traex.rippleeffect:library:1.3'
 
 
 }

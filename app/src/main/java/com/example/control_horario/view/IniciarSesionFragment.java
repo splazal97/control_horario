@@ -34,7 +34,8 @@ public class IniciarSesionFragment extends Fragment {
 
     private MainViewModel mainViewModel;
 
-    private EditText usuarioEditText, contrasenyaEditText;
+    private EditText  usuarioEditText;
+    private EditText contrasenyaEditText;
     private Button iniciarSesionButton;
     private TextView irAlRegistroTextView;
 
@@ -56,6 +57,7 @@ public class IniciarSesionFragment extends Fragment {
         contrasenyaEditText = view.findViewById(R.id.insertPass);
         iniciarSesionButton = view.findViewById(R.id.iniciar_sesionBtn);
         irAlRegistroTextView = view.findViewById(R.id.registerText);
+
 
 
         irAlRegistroTextView.setOnClickListener(new View.OnClickListener() {

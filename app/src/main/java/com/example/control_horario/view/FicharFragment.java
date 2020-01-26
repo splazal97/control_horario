@@ -58,6 +58,7 @@ public class FicharFragment extends Fragment  {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
                         if (i == 1) {
                             Toasty.error(getContext(),"Para iniciar jornada debes realizar un doble click",Toast.LENGTH_SHORT, true).show();
                         } else  if (i ==2){
