@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_inicio_admin" />
     <fragment
         android:id="@+id/editarUsuarios"
-        android:name="com.example.control_horario.view.admin.EditarUsuarios"
+        android:name="com.example.control_horario.view.admin.VerEmpleados"
         android:label="fragment_editar_usuarios"
-        tools:layout="@layout/fragment_editar_usuarios" />
+        tools:layout="@layout/fragment_ver_empleados" />
     <fragment
         android:id="@+id/verHorasAdmin"
         android:name="com.example.control_horario.view.admin.VerHorasAdmin"
@@ -25,5 +25,10 @@
         android:name="com.example.control_horario.view.admin.CerrarSessionAdminFragment"
         android:label="fragment_cerrar_session_admin"
         tools:layout="@layout/fragment_cerrar_session_admin" />
+    <fragment
+        android:id="@+id/editarEmpleadoFragment"
+        android:name="com.example.control_horario.view.admin.EditarEmpleadoFragment"
+        android:label="fragment_editar_empleado"
+        tools:layout="@layout/fragment_editar_empleado" />
 
 </navigation>

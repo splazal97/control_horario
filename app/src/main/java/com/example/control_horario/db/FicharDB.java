@@ -13,11 +13,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.example.control_horario.model.Converters;
 import com.example.control_horario.model.DetallesEmpleados;
 import com.example.control_horario.model.Empleado;
+import com.example.control_horario.model.EmpleadosHoras;
 import com.example.control_horario.model.Horas;
 
 
-//Cuando se realice un cambio en el esquema de la base de datos hay que cambiar la version
-@Database(entities = {Empleado.class, Horas.class}, views = {DetallesEmpleados.class}, version = 7,exportSchema = false)
+@Database(entities = {Empleado.class, Horas.class}, views = {EmpleadosHoras.class}, version = 8,exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class FicharDB extends RoomDatabase {
     private static FicharDB ficharDB;

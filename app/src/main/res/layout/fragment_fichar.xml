@@ -6,31 +6,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:gravity="center"
+    android:background="@drawable/fondo"
     tools:context=".view.FicharFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <com.sanojpunchihewa.glowbutton.GlowButton
         android:id="@+id/iniciarJornadaBTN"
-        android:layout_width="wrap_content"
-        android:textSize="20dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:textSize="18dp"
+        android:layout_height="70dp"
         android:background="#7CC7EE"
         android:text="@string/iniciar_jornada"
         android:padding="15dp"
-        android:layout_margin="15dp"
         app:buttonColor="@color/secundary"
-        app:glowColor="#ffffff"/>
+        app:glowColor="@color/secundary"/>
     <com.sanojpunchihewa.glowbutton.GlowButton
         android:id="@+id/finalizarJornadaBTN"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:textSize="18dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="#7CC7EE"
         android:text="@string/finalizar_jornada"
         android:padding="15dp"
-        android:layout_margin="15dp"
         app:buttonColor="@color/secundary"
-        app:glowColor="#ffffff"/>
+        app:glowColor="@color/secundary"/>
 
 </LinearLayout>

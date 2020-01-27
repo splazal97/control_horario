@@ -3,6 +3,7 @@ package com.example.control_horario;
 import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.navigation.Navigation;
 import com.example.control_horario.db.FicharDAO;
 import com.example.control_horario.db.FicharDB;
 import com.example.control_horario.model.Empleado;
+import com.example.control_horario.model.EmpleadosHoras;
 import com.example.control_horario.model.Horas;
 
 import java.time.LocalDate;
@@ -24,6 +26,16 @@ import java.util.List;
 import es.dmoral.toasty.Toasty;
 
 public class MainViewModel extends AndroidViewModel {
+
+    public void guardarCambios(final String nombre, final String usuario, final String contrasenya, final int id) {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                dao.guardarCambiosEmpleado(nombre,usuario,contrasenya,id);
+
+            }
+        });
+    }
 
     public enum EstadoDeLaAutenticacion {
         NO_AUTENTICADO,
@@ -45,6 +57,9 @@ public class MainViewModel extends AndroidViewModel {
     public MutableLiveData<Empleado> empleadoLogueado = new MutableLiveData<>();
     public MutableLiveData<EstadoDeLaAutenticacion> estadoDeLaAutenticacion = new MutableLiveData<>(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     public MutableLiveData<EstadoDelRegistro> estadoDelRegistro = new MutableLiveData<>(EstadoDelRegistro.INICIO_DEL_REGISTRO);
+
+    public MutableLiveData<Empleado> empleadoSeleccionado = new MutableLiveData<>();
+
 
 
     int idEmpleado = -1;
@@ -75,6 +90,9 @@ public class MainViewModel extends AndroidViewModel {
     }
     public  LiveData<List<Empleado>> verEmpleados(){
         return dao.getEmpleados();
+    }
+    public LiveData<List<EmpleadosHoras>> verEmpleadosHoras(){
+        return dao.getEmpleadosHoras();
     }
 
 
@@ -111,6 +129,9 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Empleado empleado = dao.autenticar(nombre, contrasenya);
+                if (empleado.username.isEmpty()) {
+                    estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
+                } else {
                     if (empleado.username.equals("admin")) {
                         estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
 
@@ -124,6 +145,7 @@ public class MainViewModel extends AndroidViewModel {
                         estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
                     }
                 }
+            }
 
         });
     }

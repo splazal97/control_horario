@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo"
+    tools:context=".view.admin.EditarEmpleadoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+<com.mikhaellopez.circularimageview.CircularImageView
+    android:src="@drawable/user_vector"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    app:civ_border_color="@color/colorPrimary"
+    app:civ_border_width="25dp"
+    android:layout_marginVertical="25dp"
+    />
+    <EditText
+        android:id="@+id/textViewNombreEdit"
+        android:layout_width="250dp"
+        android:layout_marginVertical="20dp"
+        android:layout_height="40dp"
+        android:background="#ffffff"
+        android:inputType="textPersonName"
+        android:text="---------"
+         />
+        <EditText
+            android:id="@+id/textViewUserEdit"
+            android:layout_width="250dp"
+            android:layout_marginVertical="20dp"
+            android:background="#ffffff"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:text="---------"/>
+        <EditText
+            android:id="@+id/textViewPassEdit"
+            android:layout_width="250dp"
+            android:layout_marginVertical="20dp"
+            android:background="#ffffff"
+            android:inputType="textPersonName"
+            android:layout_height="40dp"
+            android:text="---------"/>
+        <com.sanojpunchihewa.glowbutton.GlowButton
+            android:id="@+id/ButtonGuardar"
+
+            android:textSize="20sp"
+            android:text="GUARDAR CAMBIOS"
+            android:padding="20dp"
+            android:layout_marginVertical="20dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:buttonColor="#7CC7EE"
+            app:glowColor="@color/secundary"
+
+            />
+
+    </LinearLayout>
+
+</ScrollView>

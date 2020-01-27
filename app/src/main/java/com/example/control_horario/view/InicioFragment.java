@@ -52,7 +52,7 @@ public class InicioFragment extends Fragment {
             @Override
             public void onChanged(Empleado empleado) {
                 if(empleado != null){
-                    userTextView.setText(empleado.nombreCompleto);
+                    userTextView.setText("Bienvenido a o'clock "+empleado.nombreCompleto);
                 }else {
                     Log.e("ABCD", "mierda no deberia ser null");
                 }

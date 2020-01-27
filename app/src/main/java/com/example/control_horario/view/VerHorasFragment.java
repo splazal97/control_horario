@@ -60,9 +60,6 @@ public class VerHorasFragment extends Fragment {
         mainViewModel.verHoras().observe(this, new Observer<List<Horas>>() {
             @Override
             public void onChanged(List<Horas> queryResult) {
-                for(Horas h : queryResult){
-                    Log.e("ABCD", "HORASSSS " + h.toString());
-                }
                 verHorasAdapter.establecerHoras(queryResult);
 
             }
@@ -86,12 +83,12 @@ public class VerHorasFragment extends Fragment {
             final Horas horas = verHorasDetalle.get(position);
 
             if (horas.inicio != null){
-                holder.textViewHorasInsetadas.setText("Inicio de Jornada: ");
+                holder.textViewHorasInsetadas.setText("Inicio: ");
                 holder.jornadaText.setText(horas.inicio.format(formatter));
             }
 
              if (horas.fin != null) {
-                 holder.textViewHorasInsetadas.setText("Fin de Jornada");
+                 holder.textViewHorasInsetadas.setText("Fin: ");
                  holder.jornadaText.setText(horas.fin.format(formatter));
              }
 

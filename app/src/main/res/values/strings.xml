@@ -20,7 +20,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="finalizar_jornada">FINALIZAR JORNADA</string>
     <string name="iniciar_jornada">INICIAR JORNADA</string>
-    <string name="inicio_admin">Inicio de sesion como admin</string>
+    <string name="inicio_admin">Inicio de sesión como administrador</string>
+    <string name="inicio_admin2">"Desde este panel puedes ver todos lo usuarios de tu aplicación y ver las horas de tus empleados"</string>
     <string name="title_activity_main_admin">MainActivityAdmin</string>
     <string name="horas_insertadas">Horas insertadas:</string>
 

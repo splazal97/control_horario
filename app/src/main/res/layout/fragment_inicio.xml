@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/fondo"
     android:orientation="vertical"
     tools:context=".view.InicioFragment">
 
@@ -14,15 +14,19 @@
         android:id="@+id/edittext_username_inicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="username"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        android:textColor="#ffffff"/>
 
     <TextView
         android:id="@+id/textoInicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="#ffffff"
         android:text="@string/textoiInicio"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/relo"
@@ -31,6 +35,6 @@
         android:layout_gravity="center"
         android:layout_margin="15sp"
         android:padding="15sp"
-        android:src="@drawable/reloj" />
+        android:src="@drawable/relojv2" />
 
 </LinearLayout>

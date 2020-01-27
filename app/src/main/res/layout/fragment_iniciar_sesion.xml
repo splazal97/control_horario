@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.andexert.library.RippleView
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +8,7 @@
     tools:context=".view.IniciarSesionFragment"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@drawable/fondo">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,9 +30,10 @@
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:layout_margin="12dp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="#ffffff"/>
 
-            <com.example.eljo.customedittext.EljoPriftiEditText
+            <EditText
                 android:id="@+id/insertUser"
                 android:hint="@string/insertUser"
                 android:padding="15sp"
@@ -41,21 +42,17 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.573"
+                android:background="#ffffff"
                 />
 
                <EditText
                 android:padding="15sp"
                 android:textSize="25dp"
                 android:id="@+id/insertPass"
+                android:background="#ffffff"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
+                   android:layout_margin="25dp"
                 android:gravity="center"
                 android:hint="@string/insert_pass"
                 android:inputType="textPassword"
@@ -65,6 +62,7 @@
                 android:textSize="22sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#ffffff"
                 android:gravity="center"
                 android:text="@string/register_text"
                 android:padding="15sp"
@@ -77,8 +75,8 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 app:buttonColor="#7CC7EE"
-                app:glowColor="#ffffff"
+                app:glowColor="@color/secundary"
                />
 
         </LinearLayout>
-</com.andexert.library.RippleView>
+</ScrollView>

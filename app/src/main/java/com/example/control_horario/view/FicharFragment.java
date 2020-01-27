@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.andexert.library.RippleView;
 import com.example.control_horario.MainViewModel;
 import com.example.control_horario.R;
 
@@ -26,7 +27,8 @@ import es.dmoral.toasty.Toasty;
  */
 public class FicharFragment extends Fragment  {
     MainViewModel mainViewModel;
-    Button iniciarJornada,finalJornada;
+    Button finalJornada;
+    Button iniciarJornada;
     public FicharFragment() {
         // Required empty public constructor
     }

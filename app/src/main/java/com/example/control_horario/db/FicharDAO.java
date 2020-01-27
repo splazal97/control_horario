@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.control_horario.model.Empleado;
+import com.example.control_horario.model.EmpleadosHoras;
 import com.example.control_horario.model.Horas;
 
 import java.time.LocalDate;
@@ -24,6 +25,10 @@ public abstract class FicharDAO {
     @Query("SELECT * FROM Horas")
     public  abstract  LiveData<List<Horas>> getHoras();
 
+    @Query("SELECT * FROM EmpleadosHoras ORDER BY id asc")
+    public abstract LiveData<List<EmpleadosHoras>> getEmpleadosHoras();
+
+
 
     @Query("SELECT * FROM Empleado WHERE username = :username AND contrasenya = :contrasenya")
     public abstract Empleado autenticar(String username, String contrasenya);
@@ -38,10 +43,14 @@ public abstract class FicharDAO {
     @Query("INSERT INTO Horas(idEmpleado, fin) VALUES (:idEmpleado, :fin)")
     public abstract long finalJornada(int idEmpleado, LocalDateTime fin);
 
+    @Query("UPDATE Empleado set nombreCompleto= :nuevoNombre where username=:username")
+    public abstract void cambiarNombre(String nuevoNombre,String username);
 
     @Query("SELECT * FROM Horas WHERE idEmpleado = :idEmpleado")
     public  abstract LiveData<List<Horas>> verHoras(int idEmpleado);
 
+    @Query("UPDATE Empleado SET nombreCompleto=:nombre, username=:usuario, contrasenya=:contrasenya where id=:id")
+    public abstract void guardarCambiosEmpleado(String nombre, String usuario, String contrasenya, int id);
 }
 
 

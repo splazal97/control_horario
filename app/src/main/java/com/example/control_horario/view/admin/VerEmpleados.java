@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.control_horario.MainViewModel;
@@ -28,21 +28,17 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EditarUsuarios extends Fragment {
+public class VerEmpleados extends MyFragment {
     MainViewModel mainViewModel;
 
-    private EditarUsuarios.verEmpleadosAdapter verEmpleadosAdapter;
+    private VerEmpleados.verEmpleadosAdapter verEmpleadosAdapter;
 
-    public EditarUsuarios() {
-        // Required empty public constructor
-    }
+    public VerEmpleados() {}
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_usuarios, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_ver_empleados, container, false);
     }
 
     @Override
@@ -83,6 +79,13 @@ public class EditarUsuarios extends Fragment {
             holder.nombreTextView.setText("Nombre: "+empleado.nombreCompleto);
             holder.usuarioTextView.setText("Usuario: "+empleado.username);
 
+            holder.editarUsuario.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mainViewModel.empleadoSeleccionado.postValue(empleado);
+                    navController.navigate(R.id.editarEmpleadoFragment);
+                }
+            });
         }
 
         @Override
@@ -98,11 +101,13 @@ public class EditarUsuarios extends Fragment {
 
         class verEmpleadosViewHolder extends RecyclerView.ViewHolder {
             TextView usuarioTextView, nombreTextView;
+            ImageView editarUsuario;
 
             public verEmpleadosViewHolder(@NonNull View itemView) {
                 super(itemView);
                 usuarioTextView = itemView.findViewById(R.id.usuarioTextView);
                 nombreTextView = itemView.findViewById(R.id.nombreTextView);
+                editarUsuario = itemView.findViewById(R.id.editUser);
 
             }
         }
