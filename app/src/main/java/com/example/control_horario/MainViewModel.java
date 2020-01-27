@@ -129,7 +129,24 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void run() {
                 Empleado empleado = dao.autenticar(nombre, contrasenya);
-                if (empleado.username.isEmpty()) {
+                 if (empleado != null){
+                     if (empleado.username.equals("admin")){
+                         estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.ADMIN);
+                     } else{
+                         idEmpleado = empleado.id;
+
+                         empleadoLogueado.postValue(empleado);
+                         estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
+                     }
+
+                 } else {
+                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
+                 }
+            }
+        });
+    }
+                /*
+                * if (empleado.username.isEmpty()) {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
                 } else {
                     if (empleado.username.equals("admin")) {
@@ -144,11 +161,9 @@ public class MainViewModel extends AndroidViewModel {
                     } else {
                         estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
                     }
-                }
-            }
+                }*/
 
-        });
-    }
+
 
     public void cerrarSesion() {
         empleadoLogueado.postValue(null);

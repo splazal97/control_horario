@@ -20,6 +20,12 @@
     app:civ_border_width="25dp"
     android:layout_marginVertical="25dp"
     />
+        <TextView
+            android:text="Nombre completo"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/textViewNombreEdit"
         android:layout_width="250dp"
@@ -29,6 +35,12 @@
         android:inputType="textPersonName"
         android:text="---------"
          />
+        <TextView
+            android:text="Nombre de usuario"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/textViewUserEdit"
             android:layout_width="250dp"
@@ -37,6 +49,12 @@
             android:layout_height="40dp"
             android:inputType="textPersonName"
             android:text="---------"/>
+        <TextView
+            android:text="Contraseña"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/textViewPassEdit"
             android:layout_width="250dp"
